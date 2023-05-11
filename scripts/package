@@ -22,10 +22,6 @@ case $(uname -m) in
     exit 1
 esac
 
-if [ ! -x ./bin/longhorn ]; then
-    ./scripts/build
-fi
-
 #APIVERSION=`./bin/longhorn-instance-manager version --client-only|jq ".clientVersion.instanceManagerAPIVersion"`
 TAG=${TAG:-v${APIVERSION}_`date -u +%Y%m%d`}
 REPO=${REPO:-longhornio}
